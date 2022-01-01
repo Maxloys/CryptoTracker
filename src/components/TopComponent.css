@@ -23,7 +23,10 @@
 .left-items span,
 .middle-items span,
 .right-items span {
-  color: #4664fb;
+  color: white;
+  padding: 5px;
+  border-radius: 9px;
+  background-color: #4664fb;
   font-weight: 600;
 }
 

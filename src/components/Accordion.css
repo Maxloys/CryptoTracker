@@ -16,6 +16,7 @@
   align-items: center;
   border: none;
   outline: none;
+  border-radius: 15px;
   transition: background-color 0.2s ease;
 }
 
@@ -42,6 +43,9 @@
 }
 
 .accordion__content {
+  box-shadow: 7px 20px 30px -16px rgba(0, 119, 255, 0.4);
+  -webkit-box-shadow: 7px 20px 30px -16px rgba(0, 119, 255, 0.4);
+  -moz-box-shadow: 7px 20px 30px -16px rgba(0, 119, 255, 0.4);
   background-color: white;
   overflow: hidden;
   transition: max-height 0.5s ease;

@@ -34,8 +34,8 @@ const chartData = {
             label: "USD",
             data : coinPrice,
             fill: false,
-            backgroundColor: '#78dd92',
-            borderColor: 'red'
+            backgroundColor: '#28bdfb',
+            borderColor: '#4664fb',
         }
     ]
 }
