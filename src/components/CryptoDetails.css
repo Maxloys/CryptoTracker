@@ -1,0 +1,36 @@
+/*CRYPTO-DETAILS*/
+.details-main {
+  padding: 20px;
+}
+.details-header {
+  color: #18283d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+.stats {
+  display: flex;
+  justify-content: space-around;
+}
+
+.left-stats p,
+.right-stats p {
+  font-size: 16px;
+  font-weight: bold;
+  border-bottom: 2px solid black;
+  padding: 15px;
+}
+.right-stats {
+  margin-top: 20px;
+  margin-right: 400px;
+}
+.left-stats {
+  margin-top: 20px;
+  margin-left: 400px;
+}
+.details-info p {
+  margin-left: 5px;
+  font-weight: 600;
+  width: 95%;
+}

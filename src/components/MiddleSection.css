@@ -1,0 +1,10 @@
+/* Middle section */
+.middle-content {
+  background-color: #f9faff;
+  border-radius: 10px;
+  margin: 0 25px 0 25px;
+  overflow-y: auto;
+  height: 85vh;
+  width: 100%;
+  padding: 20px;
+}
