@@ -32,35 +32,24 @@ const ItemsList = ({simplified, setSimplified}) => {
         <div className="items-container" >
             {cryptos?.map(currency =>(
                 <div className="items" key={currency.id}>
-                    <Link to ={`/crypto/${currency.id}`} style={{textDecoration: "none", color:"black"}}>
+                    <Link to ={`/crypto/${currency.id}`} style={{textDecoration: "none"}}>
                         <div className="item-heading">
-                            <div  className="item-text" style={{fontSize:"24px", fontWeight:'bold'}}>{`${currency.rank}. ${currency.name} `}</div>
-                                <img src={currency.iconUrl} alt={currency.name} className="item-image" />       
+                        <img src={currency.iconUrl} alt={currency.name} className="item-image" /> 
+                            <div  className="item-text">{`${currency.rank}. ${currency.name} `}
+                            </div>
+    
                         </div>
-                        <hr />
-                        <p>Price: {millify(currency.price)}</p>
+                        <p>Price: {millify(currency.price)}$</p>
+                        {/*
                         <p>Market Cap: {millify(currency.marketCap)}</p>
-                        <p>Daily Changes: {millify(currency.change)}%</p>
+            <p>Daily Changes: {millify(currency.change)}%</p> */}
                     </Link>
                 </div>
              ))}
         </div>
         {(simplified)? 
-        <div style={{display:'flex', justifyContent:'center', padding:'2rem'}}>
-        <Link to="/cryptocurrencies" style={{
-        display:'flex',
-        width:'10rem',
-        height:'2rem',
-        border:'2px solid black',
-        borderRadius:'6px',
-        justifyContent:'center',
-        alignItems:'center',
-        textDecoration:'none',
-        backgroundColor:'black',
-        fontSize:'14px',
-        fontWeight:'bold',
-        color:'white',
-    }} onClick={()=> setSimplified(!simplified)}>View More</Link></div> : ""}
+        <div style={{display:'flex', justifyContent:'center'}}>
+        <Link to="/cryptocurrencies" className='view-button' onClick={()=> setSimplified(!simplified)}>View More</Link></div> : ""}
         </div>
         </>
     )

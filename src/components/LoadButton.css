@@ -5,16 +5,22 @@
 }
 
 .button {
-  width: 10rem;
-  height: 2rem;
-  font-size: 14px;
+  display: flex;
+  width: 12rem;
+  height: 3rem;
+  border-radius: 15px;
+  justify-content: center;
+  align-items: center;
+  background-color: #28bdfb;
+  font-size: 15px;
   font-weight: bold;
-  background-color: transparent;
-  border: 2px solid black;
-  border-radius: 5px;
+  color: #ffffff;
+  border-style: solid;
+  border-color: #28bdfb;
+  transition: 0.2s linear all;
 }
 .button:hover,
 .button:active {
-  background-color: black;
-  color: white;
+  background-color: #4664fb;
+  border-color: #4664fb;
 }

@@ -23,21 +23,12 @@
 .left-items span,
 .middle-items span,
 .right-items span {
-  color: black;
+  color: #4664fb;
   font-weight: 600;
 }
 
 @media screen and (max-width: 500px) {
-  .left-items,
-  .middle-items,
-  .right-items {
-    flex-direction: column;
-    font-size: 20px;
-    margin: 0 2rem 0 2rem;
-    gap: 10px;
-  }
   .top-content {
-    display: grid;
-    gap: 10px;
+    overflow-x: scroll;
   }
 }
