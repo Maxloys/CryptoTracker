@@ -2,13 +2,28 @@
 .items-main {
   padding: 20px;
 }
+
+.search-header {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
 .items-search {
   font-size: medium;
-  border: 0.5px solid #7a7d83;
-  border-radius: 5px;
-  height: 35px;
-  width: 250px;
-  margin: 10px 0 20px 43%;
+  border: 1px solid #b8cffd;
+  border-radius: 10px;
+  height: 3rem;
+  width: 13rem;
+  font-weight: bold;
+  font-size: 14px;
+  transition: 0.3s linear all;
+}
+
+.items-search:focus {
+  scale: 103%;
+  color: #4664fb;
+  border-color: #4664fb;
 }
 
 .items-container {

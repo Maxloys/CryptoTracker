@@ -30,8 +30,11 @@
   font-weight: 600;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 800px) {
   .top-content {
     overflow-x: scroll;
+    justify-content: flex-start;
+    padding: 1rem;
+    white-space: nowrap;
   }
 }

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import {useGetCryptosQuery} from '../services/cryptoAPI'    
 import './ItemsList.css'
 import { Loading } from '.' 
+
 const ItemsList = ({simplified, setSimplified}) => {
 
     const [search, setSearch] = useState('')
@@ -26,7 +27,9 @@ const ItemsList = ({simplified, setSimplified}) => {
     return (
        <>
        <div className='items-main'>
-        {!simplified? <input type="search" placeholder="Search" className="items-search" onChange={(e) => setSearch(e.target.value)}/> : ''}
+        {!simplified? <div className='search-header'>
+        <input type="text" placeholder='Search...' className="items-search" onChange={(e) => setSearch(e.target.value)}/>
+        </div> : ''}
         {(simplified && !search)? <h1 >Top 10 cryptos in the world </h1> : ''}
         
         <div className="items-container" >
@@ -50,6 +53,10 @@ const ItemsList = ({simplified, setSimplified}) => {
         {(simplified)? 
         <div style={{display:'flex', justifyContent:'center'}}>
         <Link to="/cryptocurrencies" className='view-button' onClick={()=> setSimplified(!simplified)}>View More</Link></div> : ""}
+
+
+     
+
         </div>
         </>
     )
