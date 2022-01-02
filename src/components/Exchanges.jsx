@@ -15,7 +15,7 @@ const Exchanges = () => {
     useEffect(() => {
         if(isFetching) return <Loading/>  
         setMarketsData(data?.data?.exchanges)
-    },[isFetching])
+    },[data, isFetching])
 
    
     

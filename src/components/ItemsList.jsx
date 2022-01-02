@@ -20,7 +20,7 @@ const ItemsList = ({simplified, setSimplified}) => {
    
     useEffect(() => {
         setSimplified(true) 
-    }, [])
+    }, [setSimplified])
 
     if(isFetching) return <Loading/>
 

@@ -4,6 +4,7 @@ import {useGetCryptoNewsQuery} from '../services/cryptoNewsApi'
 import moment from 'moment'
 import './News.css'
 import { Loading, LoadButton } from '.'
+import uknown from '../images/unknown.jpg' 
 
 const exchangesPerPage = 10
 const dataAmount = 100
@@ -28,7 +29,7 @@ const News = ({simplified, setSimplified}) => {
         if(isFetching) return <Loading/>
         setCryptoNews(data?.value)
         console.log(cryptoNews)
-    }, [data, isFetching])
+    }, [cryptoNews, data, isFetching])
    
     if(isFetching) return <Loading/>
   
@@ -52,7 +53,7 @@ const News = ({simplified, setSimplified}) => {
                     <div className='news-flex'>
                         <div className='news-photo'>
                         {/*<h1 className="news-heading">{news.name}</h1>*/}
-                        <img src={news?.image?.thumbnail?.contentUrl}  className='news-image' alt="img" />
+                        <img src={(news?.image?.thumbnail?.contentUrl)? news?.image?.thumbnail?.contentUrl : uknown}  className='news-image' alt="img" />
                         </div>
                         <div className='news-footer'>
                         <h2 className="news-heading">{(news.name.length>50)? news.name.substring(0,50)+'...': news.name} </h2>

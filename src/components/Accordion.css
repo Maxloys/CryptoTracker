@@ -17,13 +17,19 @@
   border: none;
   outline: none;
   border-radius: 15px;
-  transition: background-color 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .accordion:hover,
 .active {
   background-color: #4664fb;
   color: #ffffff;
+}
+
+.active {
+  border-radius: 0%;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
 }
 
 .accordion__title {
@@ -49,6 +55,9 @@
   background-color: white;
   overflow: hidden;
   transition: max-height 0.5s ease;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  margin-bottom: 1rem;
 }
 
 .accordion__text {
