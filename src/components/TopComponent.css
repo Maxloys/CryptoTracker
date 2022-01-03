@@ -35,5 +35,10 @@
     overflow-x: scroll;
     justify-content: flex-start;
     white-space: nowrap;
+    font-size: 12px;
+  }
+  .top-content::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
   }
 }

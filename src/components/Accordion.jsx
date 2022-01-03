@@ -23,7 +23,7 @@ function Accordion(props) {
   return (
     <div className="accordion__section" style={{marginBottom:'10px'}}>
       <button className={`accordion ${Active}`} onClick={toggleAccordion}>
-      <img src={props.iconUrl} width={30} style={{marginRight:"10px"}} alt='icon' />
+      <img src={props.iconUrl} className='accordion__image' alt='icon' />
         <p className="accordion__title">{props.title}</p>
         <FaChevronRight className={`${Rotate}`} width={10} />
       </button>

@@ -44,6 +44,11 @@
   transition: transform 0.6s ease;
 }
 
+.accordion__image {
+  width: 30px;
+  margin-right: 10px;
+}
+
 .rotate {
   transform: rotate(90deg);
 }
@@ -62,7 +67,17 @@
 
 .accordion__text {
   font-family: "Open Sans", sans-serif;
-  font-weight: 400;
-  font-size: 14px;
+  font-weight: 600;
+  font-size: 15px;
   padding: 18px;
+}
+
+@media screen and (max-width: 500px) {
+  .accordion__title {
+    font-size: 14px;
+  }
+
+  .accordion__text {
+    font-size: 12px;
+  }
 }
