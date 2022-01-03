@@ -15,7 +15,7 @@ const TopComponent = () => {
                 </div>    
                 <div className="middle-items">
                     <p className="top-parag">Market cap: <span>{millify(globalStats.totalMarketCap)}</span></p>
-                    <p className="top-parag">Volume 24H: <span>${millify(globalStats.total24hVolume)}</span></p>
+                    <p className="top-parag">Volume 24H: <span>{millify(globalStats.total24hVolume)} $</span></p>
                 </div>   
                 <div className="right-items">
                     <p className="top-parag">Exchanges: <span>{millify(globalStats.totalExchanges)}</span></p>

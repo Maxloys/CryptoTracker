@@ -104,8 +104,29 @@
   }
 }
 
-@media screen and (max-width: 890px) {
+@media screen and (max-width: 650px) {
   .items-container {
     grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .items-main {
+    font-size: 12px;
+  }
+
+  .search-header {
+    padding: 0;
+  }
+
+  .items-search {
+    width: 9rem;
+  }
+
+  .items p {
+    font-size: 12px;
+  }
+  .item-text {
+    font-size: 14px;
   }
 }

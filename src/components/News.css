@@ -74,6 +74,10 @@
   transition: 0.2s linear all;
 }
 
+.news-heading {
+  color: #ffffff;
+}
+
 .news-postdate {
   display: flex;
   width: 100%;

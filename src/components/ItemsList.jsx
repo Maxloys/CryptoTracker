@@ -30,7 +30,7 @@ const ItemsList = ({simplified, setSimplified}) => {
         {!simplified? <div className='search-header'>
         <input type="text" placeholder='Search...' className="items-search" onChange={(e) => setSearch(e.target.value)}/>
         </div> : ''}
-        {(simplified && !search)? <h1 >Top 10 cryptos in the world </h1> : ''}
+        {(simplified && !search)? <h1>Top 10 cryptos in the world </h1> : ''}
         
         <div className="items-container" >
             {cryptos?.map(currency =>(

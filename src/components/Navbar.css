@@ -12,7 +12,7 @@
   height: 2rem;
 }
 
-.navbar-hamburger:hover {
+.navbar-hamburger:active {
   color: #4664fb;
 }
 
@@ -21,6 +21,14 @@
   display: flex;
   width: 100%;
   justify-content: flex-end;
+}
+
+.close-button {
+  width: 2rem;
+  height: 2rem;
+}
+.close-button:active {
+  color: #4664fb;
 }
 
 .logo-box {
@@ -71,18 +79,6 @@
   color: #ffffff;
 }
 
-@media screen and (max-width: 670px) {
-  .navbar-links {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-column-gap: 5px;
-    grid-row-gap: 20px;
-  }
-
-  .navbar-link {
-    border-bottom: 2px solid black;
-  }
-}
 @media screen and (max-width: 520px) {
   .navbar-content {
     font-size: 18px;
@@ -94,8 +90,10 @@
 
 @media screen and (max-width: 1180px) {
   .navbar-content {
+    background-color: #ffffff;
     position: absolute;
-    height: 82.5vh;
+    height: 100vh;
+    border-bottom-right-radius: 15px;
     transform: translate(-150%);
     transition: 0.3s linear all;
   }
@@ -103,7 +101,8 @@
   .navbar-content-active {
     background-color: #ffffff;
     padding: 2rem;
-    height: 82.5vh;
+    height: 100vh;
+    border-bottom-right-radius: 15px;
     position: absolute;
     left: 0;
     z-index: 1;

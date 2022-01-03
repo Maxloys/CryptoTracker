@@ -47,31 +47,31 @@ const selectOptions = ['24h', '7d', '30d', '1y', '5y']
         <div className='details-main'>
         <div className="details-header">
             <h1>{cryptoData?.name}</h1>
-            <img src={cryptoData?.iconUrl} alt={cryptoData?.name} style={{width:"100px", height:"100px", marginLeft:"20px"}} />
+            <img src={cryptoData?.iconUrl} className='details-image' alt={cryptoData?.name}  />
         </div>
         <div className="stats">
         <div className="left-stats">
             <h1>Value Statistics</h1>
             <p>
-             Price: {millify(cryptoData?.price)}$
+             Price: <span>{millify(cryptoData?.price)} $</span>
             </p>
             <p>
-                Rank: {cryptoData?.rank}
+                Rank: <span style={{padding:'5px 12px 5px 12px'}}>{cryptoData?.rank}</span>
             </p>
             <p>
-                24H Volume: {millify(cryptoData?.volume)} $
+                24H Volume: <span>{millify(cryptoData?.volume)} $</span>
             </p>
             <p>
-                Market Cap: {millify(cryptoData?.marketCap)} $
+                Market Cap: <span>{millify(cryptoData?.marketCap)} $</span>
             </p>
         </div>
         <div className="right-stats">
             <h1>Other Statistics</h1>
             <p>
-                Number Of Markets : {cryptoData?.numberOfMarkets}
+                Number Of Markets : <span>{cryptoData?.numberOfMarkets}</span>
             </p>
             <p>
-                Number Of Exchanges: {cryptoData?.numberOfExchanges}
+                Number Of Exchanges: <span>{cryptoData?.numberOfExchanges}</span>
             </p>
         </div>
         </div>
@@ -79,7 +79,7 @@ const selectOptions = ['24h', '7d', '30d', '1y', '5y']
             <h1>What is {cryptoData?.name}</h1>
             <div>{HTMLReactParser(cryptoData?.description)}</div>
         </div>
-        <select onChange={(e) => {
+        <select className = 'details-select' onChange={(e) => {
             e.preventDefault()
             setDays(e.target.value)
         }}>
