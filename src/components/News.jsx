@@ -36,49 +36,46 @@ const News = ({simplified, setSimplified}) => {
     
     return (
         <>
-        <div className='news-main'>
-        {(simplified)? <h1 >Cryptos News </h1> : ''}    
-        <select value={newsCategory} className='news-select' onChange={(e) => {
-            e.preventDefault()
-            setSimplified(false)
-            setNewsCategory(e.target.value)}}
-        >
-            {selectList.map((coin, id) =>  <option value={coin} key={id}>{coin}</option>)}
-        </select>
+            <div className='news-main'>
+                {(simplified)? <h1 >Cryptos News </h1> : ''}    
+                <select value={newsCategory} className='news-select' onChange={(e) => {
+                    e.preventDefault()
+                    setSimplified(false)
+                    setNewsCategory(e.target.value)}}>
+                    {selectList.map((coin, id) =>  <option value={coin} key={id}>{coin}</option>)}
+                </select>
        
-        
-       {cryptoNews.length !== 0? <div className="news-container"> 
-            {cryptoNewsToShow.map((news, i) =>(
-                <div className="news-item" key={i}>
-                    <a  href={news?.url} style={{display:'block', width:'100%', height:'100%', textDecoration:'none'}}>
-                    <div className='news-flex'>
-                        <div className='news-photo'>
-                        {/*<h1 className="news-heading">{news.name}</h1>*/}
-                        <img src={(news?.image?.thumbnail?.contentUrl)? news?.image?.thumbnail?.contentUrl : uknown}  className='news-image' alt="img" />
-                        </div>
-                        <div className='news-footer'>
-                        <h2 className="news-heading">{(news.name.length>50)? news.name.substring(0,50)+'...': news.name} </h2>
-                        <p className="news-article">           
-                        {(news.description.length> 80)? news.description.substring(0,80)+'...' : news.description}
-                    </p>
-                    <div className="news-postdate">
-                       <p> by {news.provider[0].name} <span style={{marginLeft:'10px'}}><span className='news-datespan'>• {moment(news.datePublished).fromNow()}</span></span></p>
-                       </div>
-                    {/*<div className="news-footer">
-                        <img src={news.provider[0].image?.thumbnail?.contentUrl} style={{width: "30px", height: "30px"}} alt='blank' />
-                        <p className="news-postdate">{moment(news.datePublished).fromNow()}</p>
-                            </div>*/}
-                        </div>
+                {cryptoNews.length !== 0? 
+                <div className="news-container"> 
+                {cryptoNewsToShow.map((news, i) =>(
+                    <div className="news-item" key={i}>
+                        <a  href={news?.url} style={{display:'block', width:'100%', height:'100%', textDecoration:'none'}}>
+                            <div className='news-flex'>
+                                <div className='news-photo'>
+                                    {/*<h1 className="news-heading">{news.name}</h1>*/}
+                                        <img src={(news?.image?.thumbnail?.contentUrl)? news?.image?.thumbnail?.contentUrl : uknown}  className='news-image' alt="img" />
+                                </div>
+                                <div className='news-footer'>
+                                    <h2 className="news-heading">{(news.name.length>50)? news.name.substring(0,50)+'...': news.name} </h2>
+                                    <p className="news-article">           
+                                    {(news.description.length> 80)? news.description.substring(0,80)+'...' : news.description}
+                                    </p>
+                                    <div className="news-postdate">
+                                        <p> by {news.provider[0].name} <span style={{marginLeft:'10px'}}><span className='news-datespan'>• {moment(news.datePublished).fromNow()}</span></span></p>
+                                    </div>
+                                    {/*<div className="news-footer">
+                                        <img src={news.provider[0].image?.thumbnail?.contentUrl} style={{width: "30px", height: "30px"}} alt='blank' />
+                                        <p className="news-postdate">{moment(news.datePublished).fromNow()}</p>
+                                    </div>*/}
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                    </a>
-                </div>
-        ))}
-            
-
-        </div> 
-        : <h1>No Data</h1> }
-        <LoadButton array = {cryptoNews} setArray={setCryptoNewsToShow} dataAmount = {dataAmount} exchangesPerPage={exchangesPerPage} newsCategory = {newsCategory}  />
-        </div>
+                ))}
+                </div> 
+                : <h1>No Data</h1> }
+                <LoadButton array = {cryptoNews} setArray={setCryptoNewsToShow} dataAmount = {dataAmount} exchangesPerPage={exchangesPerPage} newsCategory = {newsCategory}  />
+            </div>
         </>
     )
 }

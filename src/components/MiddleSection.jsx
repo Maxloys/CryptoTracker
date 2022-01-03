@@ -12,15 +12,15 @@ const [simplified, setSimplified] = useState(true);
             <Switch>
                 <Route exact path ='/cryptocurrencies'><ItemsList simplified={simplified} setSimplified={setSimplified} /></Route>
             </Switch>
-           <Switch>
+            <Switch>
                 <Route exact path ='/news'><News simplified={simplified} setSimplified ={setSimplified}/></Route>
-           </Switch>
-           <Switch>
+            </Switch>
+            <Switch>
                 <Route exact path ='/crypto/:coinId'><CryptoDetails/></Route>
-           </Switch>
-           <Switch>
+            </Switch>
+            <Switch>
                <Route exact path = '/exchanges'><Exchanges/></Route>
-           </Switch>
+            </Switch>
         </div>
     )
 }

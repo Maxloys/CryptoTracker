@@ -26,38 +26,32 @@ const ItemsList = ({simplified, setSimplified}) => {
 
     return (
        <>
-       <div className='items-main'>
-        {!simplified? <div className='search-header'>
-        <input type="text" placeholder='Search...' className="items-search" onChange={(e) => setSearch(e.target.value)}/>
-        </div> : ''}
-        {(simplified && !search)? <h1>Top 10 cryptos in the world </h1> : ''}
+            <div className='items-main'>
+                {!simplified? <div className='search-header'>
+                <input type="text" placeholder='Search...' className="items-search" onChange={(e) => setSearch(e.target.value)}/>
+                </div> : ''}
+                {(simplified && !search)? <h1>Top 10 cryptos in the world </h1> : ''}
         
-        <div className="items-container" >
-            {cryptos?.map(currency =>(
-                <div className="items" key={currency.id}>
-                    <Link to ={`/crypto/${currency.id}`} style={{textDecoration: "none"}}>
-                        <div className="item-heading">
-                        <img src={currency.iconUrl} alt={currency.name} className="item-image" /> 
-                            <div  className="item-text">{`${currency.rank}. ${currency.name} `}
-                            </div>
-    
+                <div className="items-container" >
+                    {cryptos?.map(currency =>(
+                        <div className="items" key={currency.id}>
+                            <Link to ={`/crypto/${currency.id}`} style={{textDecoration: "none"}}>
+                                <div className="item-heading">
+                                    <img src={currency.iconUrl} alt={currency.name} className="item-image" /> 
+                                    <div  className="item-text">{`${currency.rank}. ${currency.name} `}</div>
+                                </div>
+                                <p>Price: {millify(currency.price)}$</p>
+                                {/*
+                                <p>Market Cap: {millify(currency.marketCap)}</p>
+                            <p>Daily Changes: {millify(currency.change)}%</p> */}
+                            </Link>
                         </div>
-                        <p>Price: {millify(currency.price)}$</p>
-                        {/*
-                        <p>Market Cap: {millify(currency.marketCap)}</p>
-            <p>Daily Changes: {millify(currency.change)}%</p> */}
-                    </Link>
+                    ))}
                 </div>
-             ))}
-        </div>
-        {(simplified)? 
-        <div style={{display:'flex', justifyContent:'center'}}>
-        <Link to="/cryptocurrencies" className='view-button' onClick={()=> setSimplified(!simplified)}>View More</Link></div> : ""}
-
-
-     
-
-        </div>
+                {(simplified)? 
+                    <div style={{display:'flex', justifyContent:'center'}}>
+                <Link to="/cryptocurrencies" className='view-button' onClick={()=> setSimplified(!simplified)}>View More</Link></div> : ""}
+            </div>
         </>
     )
 }

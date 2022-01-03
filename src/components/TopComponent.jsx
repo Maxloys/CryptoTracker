@@ -8,7 +8,6 @@ const TopComponent = () => {
     const globalStats = data?.data?.stats
     if(isFetching) return <Loading/>
         return (
-           
             <div className = "top-content">
                 <div className="left-items">
                     <p className="top-parag">Cryptocurrencies: <span>{millify(globalStats.total)}</span></p>

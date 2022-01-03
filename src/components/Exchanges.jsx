@@ -23,11 +23,11 @@ const Exchanges = () => {
 
     return (
         <>
-        <div className='exchanges-container'>
-            {exchangesToShow.map((market, id) =>  
-                <Accordion title={market.name} iconUrl={market.iconUrl} content ={market.description == null? 'No info' : market.description} key={id}/>)}
-            <LoadButton array = {marketsData} setArray={setExchangesToShow} dataAmount = {dataAmount} exchangesPerPage={10} />
-        </div>
+            <div className='exchanges-container'>
+                {exchangesToShow.map((market, id) =>  
+                    <Accordion title={market.name} iconUrl={market.iconUrl} content ={market.description == null? 'No info' : market.description} key={id}/>)}
+                <LoadButton array = {marketsData} setArray={setExchangesToShow} dataAmount = {dataAmount} exchangesPerPage={10} />
+            </div>
         </>
     )
 }

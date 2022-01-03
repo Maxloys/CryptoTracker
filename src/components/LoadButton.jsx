@@ -35,11 +35,11 @@ const LoadButton = ({array, setArray, dataAmount, exchangesPerPage, newsCategory
 
     return (
         <>
-        {(next === dataAmount || array.length <= next)? '' : 
-            <div className='button-container'>
-            <button className='button' onClick={handeShowMoreExchanges}>Load More ↓</button>
-            </div>
-        }
+            {(next === dataAmount || array.length <= next)? '' : 
+                <div className='button-container'>
+                    <button className='button' onClick={handeShowMoreExchanges}>Load More ↓</button>
+                </div>
+            }
         </>
     )
 }
