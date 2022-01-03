@@ -4,7 +4,7 @@
   margin: 0 25px 25px 25px;
   padding: 20px;
   width: 230px;
-  transition: 0.3s linear all;
+  transition: 0.4s linear all;
 }
 
 .navbar-hamburger {
@@ -91,25 +91,29 @@
 
 @media screen and (max-width: 1180px) {
   .navbar-content {
-    background-color: #ffffff;
     position: absolute;
     height: 100vh;
-    border-bottom-right-radius: 15px;
+    margin: 0;
+    left: 0;
+    z-index: 1;
     transform: translate(-150%);
-    transition: 0.3s linear all;
+    font-size: 14px;
+    border-bottom-right-radius: 15px;
+    transition: 0.4s linear all;
   }
 
-  .navbar-content-active {
+  .navbar__content__active {
     background-color: #ffffff;
-    padding: 2rem;
+    width: 230px;
     height: 100vh;
+    padding: 20px;
     border-bottom-right-radius: 15px;
     position: absolute;
     left: 0;
     z-index: 1;
     transform: translate(0);
     font-size: 14px;
-    transition: 0.3s linear all;
+    transition: 0.4s linear all;
     overflow: hidden;
   }
 }

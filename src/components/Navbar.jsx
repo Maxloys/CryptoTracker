@@ -49,7 +49,7 @@ const Navbar = () => {
     return (
         <>
             {burger && <GiHamburgerMenu className='navbar-hamburger' onClick={() => setClicked(!clicked)}/>}
-            {<div ref={domNode} className={ clicked? 'navbar-content-active' :'navbar-content'} >
+            {<div ref={domNode} className={ clicked? 'navbar__content__active' :'navbar-content'} >
                 {burger && <div className='close-button-flex'><FaTimes className='close-button' onClick={() => setClicked(!clicked)}/> </div>}
                 <div className="logo-box">
                     <img className="logo" src={icon} alt="logo" />
