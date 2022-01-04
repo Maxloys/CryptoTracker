@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import { CryptoDetails, ItemsList, News, Exchanges, Home } from '.'
-import {Route, Switch} from 'react-router'
+import {Route, Switch, Redirect} from 'react-router'
 import './MiddleSection.css'
 const MiddleSection = () => {
 const [simplified, setSimplified] = useState(true);
@@ -9,6 +9,11 @@ const [simplified, setSimplified] = useState(true);
 
     return (
         <div className="middle-content">
+            <Switch>
+                <Route exact path="/">
+                    <Redirect to="/home" />
+                </Route>
+            </Switch>
             <Switch>
                 <Route exact path='/home'><Home/></Route>
             </Switch>
