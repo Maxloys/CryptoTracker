@@ -5,8 +5,6 @@ import './MiddleSection.css'
 const MiddleSection = () => {
 const [simplified, setSimplified] = useState(true);
 
-
-
     return (
         <div className="middle-content">
             <Switch>
