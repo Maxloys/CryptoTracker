@@ -14,8 +14,6 @@ const ItemsList = ({simplified, setSimplified}) => {
     useEffect(() => {
         const filteredData = data?.data?.coins.filter((coin) => coin.name.toLowerCase().includes(search.toLowerCase()));
         setCryptos(filteredData) 
-        console.log(data)
-        console.log("hi", filteredData) 
     },[data,search])
    
     useEffect(() => {
@@ -33,9 +31,9 @@ const ItemsList = ({simplified, setSimplified}) => {
                 {(simplified && !search)? <h1>Top 10 cryptos in the world </h1> : ''}
         
                 <div className="items-container" >
-                    {cryptos?.map(currency =>(
-                        <div className="items" key={currency.id}>
-                            <Link to ={`/crypto/${currency.id}`} style={{textDecoration: "none"}}>
+                    {cryptos?.map((currency, id) =>(
+                        <div className="items" key={id}>
+                            <Link to ={`/crypto/${currency.uuid}`} style={{textDecoration: "none"}}>
                                 <div className="item-heading">
                                     <img src={currency.iconUrl} alt={currency.name} className="item-image" /> 
                                     <div  className="item-text">{`${currency.rank}. ${currency.name} `}</div>

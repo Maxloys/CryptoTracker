@@ -6,7 +6,7 @@ import './News.css'
 import { Loading, LoadButton } from '.'
 import uknown from '../images/unknown.jpg' 
 
-const exchangesPerPage = 10
+const itemsPerPage = 10
 const dataAmount = 100
 
 const News = ({simplified, setSimplified}) => {
@@ -28,7 +28,6 @@ const News = ({simplified, setSimplified}) => {
     useEffect(() => {
         if(isFetching) return <Loading/>
         setCryptoNews(data?.value)
-        console.log(cryptoNews)
     }, [cryptoNews, data, isFetching])
    
     if(isFetching) return <Loading/>
@@ -74,7 +73,7 @@ const News = ({simplified, setSimplified}) => {
                 ))}
                 </div> 
                 : <h1>No Data</h1> }
-                <LoadButton array = {cryptoNews} setArray={setCryptoNewsToShow} dataAmount = {dataAmount} exchangesPerPage={exchangesPerPage} newsCategory = {newsCategory}  />
+                <LoadButton array = {cryptoNews} setArray={setCryptoNewsToShow} dataAmount = {dataAmount} itemsPerPage={itemsPerPage} newsCategory = {newsCategory}  />
             </div>
         </>
     )

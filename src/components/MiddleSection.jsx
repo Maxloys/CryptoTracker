@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import { CryptoDetails, ItemsList, News, Exchanges, Home } from '.'
+import { CryptoDetails, ItemsList, News, Home } from '.'
 import {Route, Switch, Redirect} from 'react-router'
 import './MiddleSection.css'
 const MiddleSection = () => {
@@ -24,9 +24,6 @@ const [simplified, setSimplified] = useState(true);
             </Switch>
             <Switch>
                 <Route exact path ='/crypto/:coinId'><CryptoDetails/></Route>
-            </Switch>
-            <Switch>
-               <Route exact path = '/exchanges'><Exchanges/></Route>
             </Switch>
         </div>
     )

@@ -14,7 +14,6 @@ const coinPrice = []
 const coinTimeStamp = []
 const {data, isFetching} = useGetCryptosDetailsQuery(coinId)
 const { data: coinHistory } = useGetHistoryQuery({coinId, days})
-
 if (isFetching) return <Loading/> 
 
 const cryptoData = data?.data?.coin
@@ -22,7 +21,7 @@ const history = coinHistory
 
 for (let item in history?.data?.history){
     coinPrice.push(history?.data?.history[item].price)
-    coinTimeStamp.push(new Date(history?.data?.history[item].timestamp).toLocaleDateString())
+    coinTimeStamp.push(new Date(history?.data?.history[item].timestamp * 1000).toLocaleDateString())
 }
 
 const chartData = {
@@ -51,13 +50,13 @@ const selectOptions = ['24h', '7d', '30d', '1y', '5y']
                     <div className="left-stats">
                         <h1>Value Statistics</h1>
                         <p>
-                            Price: <span>{millify(cryptoData?.price)} $</span>
+                            Price: <span>{millify(parseInt(cryptoData?.price))} $</span>
                         </p>
                          <p>
                             Rank: <span style={{padding:'5px 12px 5px 12px'}}>{cryptoData?.rank}</span>
                         </p>
                         <p>
-                            24H Volume: <span>{millify(cryptoData?.volume)} $</span>
+                            24H Volume: <span>{millify(cryptoData?.['24hVolume'])} $</span>
                         </p>
                         <p>
                             Market Cap: <span>{millify(cryptoData?.marketCap)} $</span>
